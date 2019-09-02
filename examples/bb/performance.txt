@@ -1,0 +1,127 @@
+C:\git\winfsp>c: & cl -nologo -Iext tst\fsbench\fsbench.c ext\tlib\testsuite.c
+fsbench.c
+testsuite.c
+Generating Code...
+
+C:\git\winfsp>fsbench.exe
+file_create_test....................... OK 0.50s
+file_open_test......................... OK 0.19s
+file_overwrite_test.................... OK 0.32s
+file_attr_test......................... OK 5.33s
+file_list_test......................... OK 0.16s
+file_list_single_test.................. OK 5.23s
+file_list_none_test.................... OK 4.47s
+file_delete_test....................... OK 0.39s
+file_mkdir_test........................ OK 0.44s
+file_rmdir_test........................ OK 0.47s
+rdwr_cc_write_page_test................ OK 0.67s
+rdwr_cc_read_page_test................. OK 0.41s
+rdwr_cc_write_large_test............... OK 0.10s
+rdwr_cc_read_large_test................ OK 0.09s
+rdwr_nc_write_page_test................ OK 5.94s
+rdwr_nc_read_page_test................. OK 5.71s
+rdwr_nc_write_large_test............... OK 0.66s
+rdwr_nc_read_large_test................ OK 0.68s
+mmap_write_test........................ OK 1.05s
+mmap_read_test......................... OK 1.00s
+--- COMPLETE ---
+
+*bb*
+B:\>b: & C:/git/winfsp/fsbench.exe
+file_create_test....................... OK 1.84s
+file_open_test......................... OK 0.41s
+file_overwrite_test.................... OK 1.43s
+file_attr_test......................... OK 34.98s
+file_list_test......................... OK 0.22s
+file_list_single_test.................. OK 15.26s
+file_list_none_test.................... OK 14.60s
+file_delete_test....................... OK 0.99s
+file_mkdir_test........................ OK 0.21s
+file_rmdir_test........................ OK 0.22s
+rdwr_cc_write_page_test................ OK 5.44s
+rdwr_cc_read_page_test................. OK 4.38s
+rdwr_cc_write_large_test............... OK 0.44s
+rdwr_cc_read_large_test................ OK 0.41s
+rdwr_nc_write_page_test................ OK 5.74s
+rdwr_nc_read_page_test................. OK 4.35s
+rdwr_nc_write_large_test............... OK 0.47s
+rdwr_nc_read_large_test................ OK 0.39s
+mmap_write_test........................ OK 0.19s
+mmap_read_test......................... OK 0.28s
+--- COMPLETE ---
+
+*memfs*
+M:\>m: & C:/git/winfsp/fsbench.exe
+file_create_test....................... OK 0.42s
+file_open_test......................... OK 0.30s
+file_overwrite_test.................... OK 0.40s
+file_attr_test......................... OK 11.88s
+file_list_test......................... OK 0.22s
+file_list_single_test.................. OK 16.39s
+file_list_none_test.................... OK 15.41s
+file_delete_test....................... OK 0.41s
+file_mkdir_test........................ OK 0.41s
+file_rmdir_test........................ OK 0.38s
+rdwr_cc_write_page_test................ OK 5.01s
+rdwr_cc_read_page_test................. OK 4.18s
+rdwr_cc_write_large_test............... OK 0.39s
+rdwr_cc_read_large_test................ OK 0.33s
+rdwr_nc_write_page_test................ OK 5.00s
+rdwr_nc_read_page_test................. OK 4.06s
+rdwr_nc_write_large_test............... OK 0.38s
+rdwr_nc_read_large_test................ OK 0.32s
+mmap_write_test........................ OK 0.18s
+mmap_read_test......................... OK 0.31s
+--- COMPLETE ---
+
+
+*memfs*
+$ PYTHONPATH=. py -2 ./simpletap.py t 'B:\'
+t\base\00.t ........................... ok
+t\base\01.t ...........................
+not ok 2 - expect "GetFileInformation B:\\a157cc0f" <lambda> 128
+not ok 1/15
+t\base\02.t ........................... ok
+t\base\03.t ........................... ok
+t\base\04.t ........................... ok
+t\base\05.t ........................... ok
+t\base\06.t ........................... ok
+t\base\07.t ...........................
+not ok 2 - expect "GetFileInformation B:\\d1ddeddc" <lambda> -
+not ok 1/11
+t\base\08.t ........................... ok
+t\base\09.t ........................... KeyboardInterrupt
+t/base\10.t ...........................
+not ok 2 - expect "GetFileSecurity B:\\73fc0006 DACL_SECURITY_INFORMATION" <lambda> -
+not ok 4 - expect "GetFileSecurity B:\\73fc0006 DACL_SECURITY_INFORMATION" <lambda> -
+not ok 12 - expect "GetFileSecurity B:\\73fc0006 DACL_SECURITY_INFORMATION" <lambda> -
+not ok 14 - expect "GetFileSecurity B:\\73fc0006 DACL_SECURITY_INFORMATION" <lambda> -
+not ok 4/15
+
+total ................................. ok 11/15 - not ok 4/15
+
+
+*bb*
+$ PYTHONPATH=. py -2 ./simpletap.py t 'B:\'
+C:/git/winfstest/TestSuite/t\base\00.t  ok
+C:/git/winfstest/TestSuite/t\base\01.t
+not ok 2 - expect "GetFileInformation B:\\c38b3792" <lambda> 128
+not ok 1/15
+C:/git/winfstest/TestSuite/t\base\02.t  ok
+C:/git/winfstest/TestSuite/t\base\03.t  ok
+C:/git/winfstest/TestSuite/t\base\04.t  ok
+C:/git/winfstest/TestSuite/t\base\05.t  ok
+C:/git/winfstest/TestSuite/t\base\06.t  ok
+C:/git/winfstest/TestSuite/t\base\07.t
+not ok 2 - expect "GetFileInformation B:\\044fc884" <lambda> -
+not ok 1/11
+C:/git/winfstest/TestSuite/t\base\08.t  ok
+C:/git/winfstest/TestSuite/t\base\09.t  ok
+C:/git/winfstest/TestSuite/t\base\10.t
+not ok 2 - expect "GetFileSecurity B:\\d285d3ba DACL_SECURITY_INFORMATION" <lambda> -
+not ok 4 - expect "GetFileSecurity B:\\d285d3ba DACL_SECURITY_INFORMATION" <lambda> -
+not ok 12 - expect "GetFileSecurity B:\\d285d3ba DACL_SECURITY_INFORMATION" <lambda> -
+not ok 14 - expect "GetFileSecurity B:\\d285d3ba DACL_SECURITY_INFORMATION" <lambda> -
+not ok 4/15
+
+total ................................. ok 186/192 - not ok 6/192
